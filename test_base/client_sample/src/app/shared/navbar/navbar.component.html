@@ -1,0 +1,63 @@
+
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+  <div class="container-fluid">
+    <div class="navbar-wrapper">
+      <div class="navbar-toggle">
+        <button type="button" class="navbar-toggler" (click)="sidebarToggle()">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <a class="navbar-brand" href="javascript:void(0)">{{getTitle()}}</a>
+    </div>
+    <button class="navbar-toggler" type="button" (click)="collapse()"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="collapseExample" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav">
+        <li class="nav-item btn-rotate" ngbDropdown placement="bottom-left">
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink" >
+            <i class="nc-icon nc-world-2"></i>
+            <p>
+              <span class="d-lg-none d-md-block">Language Settings</span>
+            </p>
+          </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-right" id="google_translate_element"></div>
+        </li>
+
+        <li class="nav-item btn-rotate" ngbDropdown placement="bottom-left">
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink" >
+            <i class="nc-icon nc-bell-55"></i><span *ngIf="unviewed > 0" class="badge badge-danger count-notif">{{unviewed}}</span>
+            <p>
+              <span class="d-lg-none d-md-block">Notifications</span>
+            </p>
+          </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-right">
+            <span *ngFor="let log of logs">
+              <a ngbDropdownItem (click)="viewNotif(log)" *ngIf="log.action_id==7 && log.action_viewed==false" class="bg-info" style="border-radius: 0;" routerLink="/main/history">
+                <span data-notify="icon" class="nc-icon nc-alert-circle-i"></span>&nbsp;&nbsp;{{log.action_name}}
+                <span data-notify="icon" (click)="removeNotif(log)" class="nc-icon nc-simple-remove" style="position:fixed; float: right; right: 5%; z-index: 1;"></span>
+              </a>
+              <a ngbDropdownItem *ngIf="log.action_id==7 && log.action_viewed==true" class="bg-darkblue" style="border-radius: 0;" routerLink="/main/history">
+                <span data-notify="icon" class="nc-icon nc-alert-circle-i"></span>&nbsp;&nbsp;{{log.action_name}}
+                <span data-notify="icon" (click)="removeNotif(log)" class="nc-icon nc-simple-remove" style="position:fixed; float: right; right: 5%; z-index: 1;"></span>
+              </a>
+              <a ngbDropdownItem (click)="viewNotif(log)" *ngIf="log.action_id==8 && log.action_viewed==false" class="bg-info" style="border-radius: 0;" routerLink="/main/chat">
+                <span data-notify="icon" class="nc-icon nc-chat-33"></span>&nbsp;&nbsp;{{log.action_name}}
+                <span data-notify="icon" (click)="removeNotif(log)" class="nc-icon nc-simple-remove" style="position:fixed; float: right; right: 5%; z-index: 1;"></span>
+              </a>
+              <a ngbDropdownItem *ngIf="log.action_id==8 && log.action_viewed==true" class="bg-darkblue" style="border-radius: 0;" routerLink="/main/chat">
+                <span data-notify="icon" class="nc-icon nc-chat-33"></span>&nbsp;&nbsp;{{log.action_name}}
+                <span data-notify="icon" (click)="removeNotif(log)" class="nc-icon nc-simple-remove" style="position:fixed; float: right; right: 5%; z-index: 1;"></span>
+              </a>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

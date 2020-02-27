@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-user">
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Incident Type*</label>
+                <select class="form-control" [(ngModel)]="incident_type" name="incident_type" placeholder="Incident Type" id="inc_type" required>
+                  <option disabled selected>Select incident type...</option>
+                  <option *ngFor="let type of types" value="{{type.incident_type}}">{{type.incident_type}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group">
+                <label>Person Concerned About*</label>
+                <input type="text" class="form-control" [(ngModel)]="incident_who" name="incident_who" autocomplete="off" placeholder="Name" id="inc_name" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Incident Date*</label>
+                <input type="date" class="form-control" [(ngModel)]="incident_when" name="incident_when" id="inc_when" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Other Comments</label>
+                <textarea class="form-control textarea" [(ngModel)]="incident_comments" name="incident_comments" placeholder="Other Comments..."></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- <form action="/upload" method="POST" enctype="multipart/form-data">  -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card-wizard">
+                  <label>Attachments</label>
+                  <input type="file" class="form-control" [(ngModel)]="incident_attachment" name="incident_attachment">
+                </div>
+              </div>
+            </div>
+              <!-- <div class="col-md-2">
+                <div class="card-wizard">
+                  <button type="submit" class="btn btn-primary btn-round" (click)="uploadFile()" style="float: right; right: 0;">Upload Files</button>
+                </div>
+              </div>
+            </div>
+          </form> -->
+          <br>
+          <div class="row">
+            <div class="ml-auto mr-auto">
+              <div class="form-group">
+                <input type="checkbox" [(ngModel)]="anonymous" name="anonymous"> Send as Anonymous
+              </div>
+            </div>
+          </div>        
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-primary btn-round" (click)="submitReport()">Submit Report</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

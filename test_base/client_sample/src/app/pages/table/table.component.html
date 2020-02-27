@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <label>Filter by Status:</label>
+        <select name="search" class="form-control" [(ngModel)]="searchStatus">
+          <option>Pending</option>
+          <option>Verified</option>
+          <option>Completed</option>
+          <option>Rejected</option>
+        </select>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body" *ngFor="let report of reports | filter:searchStatus; let i = index; let lastCall=last">
+          <button class="collapsible"><b>{{i+1}}</b> | {{report.incident_type}}<span class="inc_date">{{report.record_date}}</span></button>
+          <div class="content closed">
+            <table cellpadding="2">
+              <tr>
+                <td><b>Status:</b></td>
+                <td>{{report.incident_status}}</td>
+                <td><b>Comments:</b></td>
+                <td>{{report.incident_comments}}</td>
+              </tr>
+              <tr>
+                <td><b>Person Concerned About:</b></td>
+                <td>{{report.incident_who}}</td>
+                <td *ngIf="report.incident_status == 'Rejected'"><b>Reason for Rejection:</b></td>
+                <td *ngIf="report.incident_status == 'Rejected'">{{report.incident_reason}}</td>
+              </tr>
+              <tr>
+                <td><b>Incident Date:</b></td>
+                <td>{{report.incident_when}}</td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <!-- <td><button type="button" class="btn btn-info btn-round"><i class="nc-icon nc-simple-remove"></i></button></td> -->
+                <td><button type="submit" id="deleteReport" (click)="deleteRecord(report)" class="btn btn-danger btn-round">Delete Report</button></td>
+              </tr>
+            </table>
+          </div>
+          <span *ngIf="lastCall">{{collapse()}}</span>
+      </div>
+    </div>
+  </div>
+</div>

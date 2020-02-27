@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @enum {number} */
+const MessageType = {
+    Text: 1,
+    File: 2,
+};
+export { MessageType };
+MessageType[MessageType.Text] = 'Text';
+MessageType[MessageType.File] = 'File';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZS10eXBlLmVudW0uanMiLCJzb3VyY2VSb290Ijoibmc6Ly9uZy1jaGF0LyIsInNvdXJjZXMiOlsibmctY2hhdC9jb3JlL21lc3NhZ2UtdHlwZS5lbnVtLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7OztJQUVJLE9BQVE7SUFDUixPQUFRIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGVudW0gTWVzc2FnZVR5cGVcclxue1xyXG4gICAgVGV4dCA9IDEsXHJcbiAgICBGaWxlID0gMlxyXG59XHJcbiJdfQ==

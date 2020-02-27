@@ -1,0 +1,11 @@
+.date {
+    float: right;
+}
+
+@media (max-width: 640px) 
+{
+    .act_text
+    {
+        display: none;
+    }
+}

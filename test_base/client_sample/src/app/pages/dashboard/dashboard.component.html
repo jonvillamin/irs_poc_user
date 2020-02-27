@@ -1,0 +1,142 @@
+<div class="row" id="main-dash">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-primary">
+              <i class="nc-icon nc-watch-time text-primary"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Pending Reports</p>
+              <p class="card-title" id="count_pending">{{reports_pending}}
+                <p>
+            </div>
+          </div> 
+        </div>
+      </div>
+      <div class="card-footer ">
+        <!-- <hr>
+        <div class="stats">
+          <i class="fa fa-refresh"></i> Update Now
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-bookmark-2 text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Verified Reports</p>
+              <p class="card-title" id="count_verified">{{reports_verified}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <!-- <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Last day
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-danger">
+              <i class="nc-icon nc-simple-remove text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Rejected Reports</p>
+              <p class="card-title" id="count_rejected">{{reports_rejected}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <!-- <hr>
+        <div class="stats">
+          <i class="fa fa-clock-o"></i> In the last hour
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-success">
+              <i class="nc-icon nc-check-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Completed Reports</p>
+              <p class="card-title" id="count_complete">{{reports_complete}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer "></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card ">
+      <div class="card-body ">
+        <h5 class="card-title">Report Statistics</h5>
+        <canvas id="chartEmail">Total Count</canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="refreshbar">
+  <button class="btn btn-round nc-icon nc-refresh-69 refresh" (click)="refreshDashboard()"></button>
+</div>
+<!-- Offline bot instance -->
+<!-- <ng-chat *ngIf="!signalRAdapter || (signalRAdapter && !signalRAdapter.userId)" [adapter]="adapter"
+  [groupAdapter]="adapter"
+  [userId]="userId"
+  [historyEnabled]="true"
+  [historyPageSize]="4"
+  [hideFriendsList]="false"
+  [theme]="currentTheme"
+  (onParticipantClicked)="onEventTriggered('ParticipantClicked triggered')"
+  (onParticipantChatOpened)="onEventTriggered('ParticipantChatOpened triggered')"
+  (onParticipantChatClosed)="onEventTriggered('ParticipantChatClosed triggered')"
+  (onMessagesSeen)="onEventTriggered('MessageSeen triggered')"></ng-chat> -->
+
+<!-- SignalR instance -->
+<!-- <ng-chat *ngIf="signalRAdapter && signalRAdapter.userId"
+  [adapter]="signalRAdapter"
+  [groupAdapter]="signalRAdapter"
+  [userId]="signalRAdapter.userId"
+  [historyEnabled]="false"
+  [pollFriendsList]="true"
+  [theme]="currentTheme"
+  [fileUploadUrl]="fileUploadUrl"
+  (onParticipantClicked)="onEventTriggered('ParticipantClicked triggered')"
+  (onParticipantChatOpened)="onEventTriggered('ParticipantChatOpened triggered')"
+  (onParticipantChatClosed)="onEventTriggered('ParticipantChatClosed triggered')"
+  (onMessagesSeen)="onEventTriggered('MessageSeen triggered')"></ng-chat> -->

@@ -1,0 +1,83 @@
+<!-- <div class="row">
+  <div class="col-md-12">
+    <div class="card"> -->
+      <!-- <div class="card-header">
+        Card Header
+      </div> -->
+      <!-- <div class="card-header"> -->
+        <div class="row">
+          <div class="col-md-12 col-lg-10 col-xl-8 ml-auto mr-auto">
+            <div class="card">
+              <div class="card-body">
+                <!-- <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6"> -->
+                    <label>Filter by Type:</label>
+                    <select name="searchType" class="form-control" [(ngModel)]="searchType">
+                      <option>User Login</option>
+                      <option>Sent Report</option>
+                      <option>Updated Profile</option>
+                      <option>Deleted Report</option>
+                      <option>Report Status Updated</option>
+                      <option>New Message</option>
+                    </select>
+                  </div>
+                  <!-- <div class="col-xs-12 col-sm-6 col-md-6">
+                    <label>Filter by Date:</label>
+                    <select name="searchDate" class="form-control" [(ngModel)]="searchDate">
+                      <option>Date</option>
+                    </select>
+                  </div> -->
+                <!-- </div>
+              </div> -->
+            </div>
+            <div class="card"  style="background-color: white;">
+              <div class="card-body">
+                <div *ngFor="let log of logs | filter:searchType">
+                  <div ngSwitch="{{log.action_id}}">
+                    <!-- Logged in -->
+                    <div *ngSwitchCase="2" class="alert alert-primary alert-with-icon fade show">
+                      <span data-notify="icon" class="nc-icon nc-single-02"></span>
+                      <span data-notify="message"><span class="act_text"><b> Login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span><span class="date">{{log.action_date}}</span><span class="msg">{{log.action_name}}</span></span>
+                    </div>
+
+                    <!-- Submitted a report -->
+                    <div *ngSwitchCase="3" class="alert alert-success alert-with-icon fade show">
+                      <span data-notify="icon" class="nc-icon nc-check-2"></span>
+                      <span data-notify="message"><span class="act_text"><b> Success &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span><span class="date">{{log.action_date}}</span><span class="msg">{{log.action_name}}</span></span>
+                    </div>
+
+                    <!-- Profile Update -->
+                    <div *ngSwitchCase="4" class="alert alert-info alert-with-icon fade show">
+                      <span data-notify="icon" class="nc-icon nc-alert-circle-i"></span>
+                      <span data-notify="message"><span class="act_text"><b> Update &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span><span class="date">{{log.action_date}}</span><span class="msg">{{log.action_name}}</span></span>
+                    </div>
+
+                    <!-- Delete a report -->
+                    <div *ngSwitchCase="5" class="alert alert-danger alert-with-icon fade show">
+                      <span data-notify="icon" class="nc-icon nc-simple-remove"></span>
+                      <span data-notify="message"><span class="act_text"><b> Deletion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span><span class="date">{{log.action_date}}</span><span class="msg">{{log.action_name}}</span></span>
+                    </div>
+
+                    <!-- Update Status -->
+                    <div *ngSwitchCase="7" class="alert alert-warning alert-with-icon fade show">
+                      <span data-notify="icon" class="nc-icon nc-refresh-69"></span>
+                      <span data-notify="message"><span class="act_text"><b> Update &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span><span class="date">{{log.action_date}}</span><span class="msg">{{log.action_name}}</span></span>
+                    </div>
+
+                    <!-- Message Received -->
+                    <div *ngSwitchCase="8" class="alert alert-custom alert-with-icon fade show">
+                      <span data-notify="icon" class="nc-icon nc-chat-33"></span>
+                      <span data-notify="message"><span class="act_text"><b> Inbox &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span><span class="date">{{log.action_date}}</span><span class="msg">{{log.action_name}}</span></span>
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    <!-- </div>
+  </div>
+</div> -->

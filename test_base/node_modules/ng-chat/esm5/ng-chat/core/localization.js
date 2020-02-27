@@ -1,0 +1,38 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+export function Localization() { }
+if (false) {
+    /** @type {?} */
+    Localization.prototype.title;
+    /** @type {?} */
+    Localization.prototype.messagePlaceholder;
+    /** @type {?} */
+    Localization.prototype.searchPlaceholder;
+    /** @type {?} */
+    Localization.prototype.statusDescription;
+    /** @type {?} */
+    Localization.prototype.browserNotificationTitle;
+    /** @type {?} */
+    Localization.prototype.loadMessageHistoryPlaceholder;
+}
+/**
+ * @record
+ */
+export function StatusDescription() { }
+if (false) {
+    /** @type {?} */
+    StatusDescription.prototype.online;
+    /** @type {?} */
+    StatusDescription.prototype.busy;
+    /** @type {?} */
+    StatusDescription.prototype.away;
+    /** @type {?} */
+    StatusDescription.prototype.offline;
+    /* Skipping unhandled member: [key: string]: string;*/
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9jYWxpemF0aW9uLmpzIiwic291cmNlUm9vdCI6Im5nOi8vbmctY2hhdC8iLCJzb3VyY2VzIjpbIm5nLWNoYXQvY29yZS9sb2NhbGl6YXRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLGtDQVFDOzs7SUFORyw2QkFBYzs7SUFDZCwwQ0FBMkI7O0lBQzNCLHlDQUEwQjs7SUFDMUIseUNBQXFDOztJQUNyQyxnREFBaUM7O0lBQ2pDLHFEQUFzQzs7Ozs7QUFHMUMsdUNBT0M7OztJQUxHLG1DQUFlOztJQUNmLGlDQUFhOztJQUNiLGlDQUFhOztJQUNiLG9DQUFnQiIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBpbnRlcmZhY2UgTG9jYWxpemF0aW9uXHJcbntcclxuICAgIHRpdGxlOiBzdHJpbmc7XHJcbiAgICBtZXNzYWdlUGxhY2Vob2xkZXI6IHN0cmluZztcclxuICAgIHNlYXJjaFBsYWNlaG9sZGVyOiBzdHJpbmc7XHJcbiAgICBzdGF0dXNEZXNjcmlwdGlvbjogU3RhdHVzRGVzY3JpcHRpb247XHJcbiAgICBicm93c2VyTm90aWZpY2F0aW9uVGl0bGU6IHN0cmluZztcclxuICAgIGxvYWRNZXNzYWdlSGlzdG9yeVBsYWNlaG9sZGVyOiBzdHJpbmc7XHJcbn1cclxuXHJcbmV4cG9ydCBpbnRlcmZhY2UgU3RhdHVzRGVzY3JpcHRpb25cclxue1xyXG4gICAgb25saW5lOiBzdHJpbmc7XHJcbiAgICBidXN5OiBzdHJpbmc7XHJcbiAgICBhd2F5OiBzdHJpbmc7XHJcbiAgICBvZmZsaW5lOiBzdHJpbmc7XHJcbiAgICBba2V5OiBzdHJpbmddOiBzdHJpbmc7XHJcbn1cclxuIl19

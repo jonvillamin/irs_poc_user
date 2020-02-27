@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-sm-8 col-md-10 ml-auto mr-auto">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 id="view-mode" class="card-title">User Profile</h5>
+        <h5 id="edit-mode" class="card-title" hidden>Edit Profile</h5>
+      </div>
+      <div class="card-body"  *ngFor="let user of user">
+        <form name="updateForm">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label id="lbl_username">Username</label>
+                <input type="text" id="show_uName" class="form-control" placeholder="Username" value="{{user.user_name}}" disabled>
+
+                <label id="lbl_password" hidden>Password</label>
+                <input type="password" id="edit_pWord" class="form-control" [(ngModel)]="user_password" name="user_password" placeholder="Password" hidden>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label id="lbl_staticPw">Password</label>
+                <input type="password" id="show_pWord" class="form-control" placeholder="Password" value="{{user.user_password}}"  disabled>
+                
+                <label id="lbl_confirmPw" hidden>Confirm Password</label>
+                <input type="password" id="conf_pWord" class="form-control" [(ngModel)]="conf_password" name="conf_password" placeholder="Confirm Password" ng-pattern="user_password" hidden>
+                <span *ngIf="isNotMatch">Passwords do not match.</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="show_fName" class="form-control" placeholder="First Name" value="{{user.user_firstname}}" disabled>
+                <input type="text" id="edit_fName" class="form-control" [(ngModel)]="user_firstname" name="user_firstname" autocomplete="off" placeholder="First Name" hidden>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="show_lName" class="form-control" placeholder="Last Name" value="{{user.user_lastname}}" disabled>
+                <input type="text" id="edit_lName" class="form-control" [(ngModel)]="user_lastname" name="user_lastname" autocomplete="off" placeholder="Last Name" hidden>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" class="form-control" disabled="" placeholder="Company" value="Advanced World Solutions Inc.">
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group">
+                <label>Department</label>
+                <input id="show_uDept" type="text" class="form-control" placeholder="Department" value="{{user.user_grp}}" disabled>
+                <select id="edit_uDept" class="form-control" [(ngModel)]="user_grp" name="user_grp" hidden>
+                  <option disabled selected>Select department...</option>
+                  <option *ngFor="let dept of depts" value="{{dept.user_grp}}">{{dept.user_grp}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" id="btnSwitchOn" class="btn btn-primary btn-round" (click)="switchToUpdate()">Update Profile</button>
+              <button type="submit" id="btnToUpdate" class="btn btn-primary btn-round" (click)="updateUser()" hidden>Perform Update</button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="submit" id="btnSwitchOff" class="btn btn-danger btn-round" (click)="switchToShow()" hidden>Cancel Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

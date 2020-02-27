@@ -1,0 +1,13 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @enum {number} */
+var ScrollDirection = {
+    Top: 0,
+    Bottom: 1,
+};
+export { ScrollDirection };
+ScrollDirection[ScrollDirection.Top] = 'Top';
+ScrollDirection[ScrollDirection.Bottom] = 'Bottom';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2Nyb2xsLWRpcmVjdGlvbi5lbnVtLmpzIiwic291cmNlUm9vdCI6Im5nOi8vbmctY2hhdC8iLCJzb3VyY2VzIjpbIm5nLWNoYXQvY29yZS9zY3JvbGwtZGlyZWN0aW9uLmVudW0udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0lBQ0ksTUFBRztJQUNILFNBQU0iLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZW51bSBTY3JvbGxEaXJlY3Rpb24ge1xyXG4gICAgVG9wLFxyXG4gICAgQm90dG9tXHJcbn0iXX0=

@@ -1,0 +1,35 @@
+{
+  "name": "tallying",
+  "version": "1.0.0",
+  "description": "Simple Test App",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "",
+  "dependencies": {
+    "@angular/animations": "^9.0.2",
+    "@angular/compiler": "^9.0.2",
+    "@angular/platform-browser": "^9.0.2",
+    "@angular/platform-browser-dynamic": "^9.0.2",
+    "@angular/platform-server": "^9.0.1",
+    "@aspnet/signalr": "^1.1.4",
+    "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "formidable": "^1.2.1",
+    "gridfs-stream": "^1.1.1",
+    "jquery": "^3.4.1",
+    "mongojs": "^3.1.0",
+    "mongoose": "^5.8.11",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.0.2",
+    "ng-chat": "^2.0.5",
+    "ng2-translate": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0"
+  }
+}

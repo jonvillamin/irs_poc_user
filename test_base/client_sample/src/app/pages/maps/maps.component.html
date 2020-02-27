@@ -1,0 +1,50 @@
+<div class="row" id="chatbox">
+  <div class="col-md-12"  style="background-color: white;">
+    <div class="card card-plain">
+      <div class="card-body">
+        <table>
+          <tr *ngFor="let chat of chats; let lastCall=last">
+            <td *ngIf="chat.sender != 'Admin'" align="right">
+              <!-- for user -->
+              <span class="card-category"><b>{{chat.sender}}</b>, {{chat.dateTime}}</span>
+              <div class="message alert alert-info fade show">
+                <!-- <span data-notify="icon" class="nc-icon nc-circle-10"></span> -->
+                <span data-notify="message">{{chat.messages}}</span>
+              </div>
+            </td>
+
+            <td *ngIf="chat.sender == 'Admin'">
+              <!-- for admin -->
+              <span class="card-category"><b>Admin</b>, {{chat.dateTime}}</span>
+              <div class="message alert alert-success fade show">
+                <!-- <span data-notify="icon" class="nc-icon nc-circle-10"></span> -->
+                <span data-notify="message">{{chat.messages}}</span>
+              </div>
+            </td>
+            <span *ngIf="lastCall">{{scrollToThis()}}</span>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row box">
+  <div class="col-md-12">
+        <div class="refreshbar">
+          <button class="btn btn-round nc-icon nc-refresh-69 refresh" (click)="refreshChat()"></button>
+        </div>
+        <div class="alert alert-info alert-with-icon fade show">
+          <table class="inputArea">
+            <tr>
+              <!-- <td colspan="4"><span class="card-category black"><b>Enter your message below!</b></span></td> -->
+            </tr>
+            <tr>
+              <td><span data-notify="icon" class="nc-icon nc-circle-10"></span></td>
+              <td rowspan="2"  style="width: 90%;"><input type="text" class="typeArea form-control" id="msg_box" [(ngModel)]="messages" name="messages" autocomplete="off" placeholder="Enter message..."/></td>
+              <td><button class="btn btn-round nc-icon nc-send send" (click)="sendMessage()"></button></td>
+            </tr>
+          </table>
+        </div>
+  </div>
+</div>

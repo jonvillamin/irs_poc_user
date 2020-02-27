@@ -1,0 +1,56 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+import { Pipe } from '@angular/core';
+/** @type {?} */
+var emojiDictionary = [
+    { patterns: [':)', ':-)', '=)'], unicode: '😃' },
+    { patterns: [':D', ':-D', '=D'], unicode: '😀' },
+    { patterns: [':(', ':-(', '=('], unicode: '🙁' },
+    { patterns: [':|', ':-|', '=|'], unicode: '😐' },
+    { patterns: [':*', ':-*', '=*'], unicode: '😙' },
+    { patterns: ['T_T', 'T.T'], unicode: '😭' },
+    { patterns: [':O', ':-O', '=O', ':o', ':-o', '=o'], unicode: '😮' },
+    { patterns: [':P', ':-P', '=P', ':p', ':-p', '=p'], unicode: '😋' },
+    { patterns: ['>.<'], unicode: '😣' },
+    { patterns: ['@.@'], unicode: '😵' },
+    { patterns: ['*.*'], unicode: '😍' },
+    { patterns: ['<3'], unicode: '❤️' },
+    { patterns: ['^.^'], unicode: '😊' },
+    { patterns: [':+1'], unicode: '👍' },
+    { patterns: [':-1'], unicode: '👎' }
+];
+/*
+ * Transforms common emoji text to UTF encoded emojis
+*/
+var EmojifyPipe = /** @class */ (function () {
+    function EmojifyPipe() {
+    }
+    /**
+     * @param {?} message
+     * @param {?} pipeEnabled
+     * @return {?}
+     */
+    EmojifyPipe.prototype.transform = /**
+     * @param {?} message
+     * @param {?} pipeEnabled
+     * @return {?}
+     */
+    function (message, pipeEnabled) {
+        if (pipeEnabled && message && message.length > 1) {
+            emojiDictionary.forEach(function (emoji) {
+                emoji.patterns.forEach(function (pattern) {
+                    message = message.replace(pattern, emoji.unicode);
+                });
+            });
+        }
+        return message;
+    };
+    EmojifyPipe.decorators = [
+        { type: Pipe, args: [{ name: 'emojify' },] }
+    ];
+    return EmojifyPipe;
+}());
+export { EmojifyPipe };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW1vamlmeS5waXBlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vbmctY2hhdC8iLCJzb3VyY2VzIjpbIm5nLWNoYXQvcGlwZXMvZW1vamlmeS5waXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsSUFBSSxFQUFpQixNQUFNLGVBQWUsQ0FBQzs7SUFFaEQsZUFBZSxHQUFHO0lBQ2xCLEVBQUUsUUFBUSxFQUFFLENBQUMsSUFBSSxFQUFFLEtBQUssRUFBRSxJQUFJLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0lBQ2hELEVBQUUsUUFBUSxFQUFFLENBQUMsSUFBSSxFQUFFLEtBQUssRUFBRSxJQUFJLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0lBQ2hELEVBQUUsUUFBUSxFQUFFLENBQUMsSUFBSSxFQUFFLEtBQUssRUFBRSxJQUFJLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0lBQ2hELEVBQUUsUUFBUSxFQUFFLENBQUMsSUFBSSxFQUFFLEtBQUssRUFBRSxJQUFJLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0lBQ2hELEVBQUUsUUFBUSxFQUFFLENBQUMsSUFBSSxFQUFFLEtBQUssRUFBRSxJQUFJLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0lBQ2hELEVBQUUsUUFBUSxFQUFFLENBQUMsS0FBSyxFQUFFLEtBQUssQ0FBQyxFQUFFLE9BQU8sRUFBRSxJQUFJLEVBQUU7SUFDM0MsRUFBRSxRQUFRLEVBQUUsQ0FBQyxJQUFJLEVBQUUsS0FBSyxFQUFFLElBQUksRUFBRSxJQUFJLEVBQUUsS0FBSyxFQUFFLElBQUksQ0FBQyxFQUFFLE9BQU8sRUFBRSxJQUFJLEVBQUU7SUFDbkUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxJQUFJLEVBQUUsS0FBSyxFQUFFLElBQUksRUFBRSxJQUFJLEVBQUUsS0FBSyxFQUFFLElBQUksQ0FBQyxFQUFFLE9BQU8sRUFBRSxJQUFJLEVBQUU7SUFDbkUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxLQUFLLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0lBQ3BDLEVBQUUsUUFBUSxFQUFFLENBQUMsS0FBSyxDQUFDLEVBQUUsT0FBTyxFQUFFLElBQUksRUFBRTtJQUNwQyxFQUFFLFFBQVEsRUFBRSxDQUFDLEtBQUssQ0FBQyxFQUFFLE9BQU8sRUFBRSxJQUFJLEVBQUU7SUFDcEMsRUFBRSxRQUFRLEVBQUUsQ0FBQyxJQUFJLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0lBQ25DLEVBQUUsUUFBUSxFQUFFLENBQUMsS0FBSyxDQUFDLEVBQUUsT0FBTyxFQUFFLElBQUksRUFBRTtJQUNwQyxFQUFFLFFBQVEsRUFBRSxDQUFDLEtBQUssQ0FBQyxFQUFFLE9BQU8sRUFBRSxJQUFJLEVBQUU7SUFDcEMsRUFBRSxRQUFRLEVBQUUsQ0FBQyxLQUFLLENBQUMsRUFBRSxPQUFPLEVBQUUsSUFBSSxFQUFFO0NBQ3ZDOzs7O0FBS0Q7SUFBQTtJQWFBLENBQUM7Ozs7OztJQVhHLCtCQUFTOzs7OztJQUFULFVBQVUsT0FBZSxFQUFFLFdBQW9CO1FBQzNDLElBQUksV0FBVyxJQUFJLE9BQU8sSUFBSSxPQUFPLENBQUMsTUFBTSxHQUFHLENBQUMsRUFBRTtZQUM5QyxlQUFlLENBQUMsT0FBTyxDQUFDLFVBQUEsS0FBSztnQkFDekIsS0FBSyxDQUFDLFFBQVEsQ0FBQyxPQUFPLENBQUMsVUFBQSxPQUFPO29CQUMxQixPQUFPLEdBQUcsT0FBTyxDQUFDLE9BQU8sQ0FBQyxPQUFPLEVBQUUsS0FBSyxDQUFDLE9BQU8sQ0FBQyxDQUFDO2dCQUN0RCxDQUFDLENBQUMsQ0FBQTtZQUNOLENBQUMsQ0FBQyxDQUFDO1NBQ047UUFFTCxPQUFPLE9BQU8sQ0FBQztJQUNqQixDQUFDOztnQkFaRixJQUFJLFNBQUMsRUFBQyxJQUFJLEVBQUUsU0FBUyxFQUFDOztJQWF2QixrQkFBQztDQUFBLEFBYkQsSUFhQztTQVpZLFdBQVciLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBQaXBlLCBQaXBlVHJhbnNmb3JtIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcblxyXG5sZXQgZW1vamlEaWN0aW9uYXJ5ID0gW1xyXG4gICAgeyBwYXR0ZXJuczogWyc6KScsICc6LSknLCAnPSknXSwgdW5pY29kZTogJ/CfmIMnIH0sXHJcbiAgICB7IHBhdHRlcm5zOiBbJzpEJywgJzotRCcsICc9RCddLCB1bmljb2RlOiAn8J+YgCcgfSxcclxuICAgIHsgcGF0dGVybnM6IFsnOignLCAnOi0oJywgJz0oJ10sIHVuaWNvZGU6ICfwn5mBJyB9LFxyXG4gICAgeyBwYXR0ZXJuczogWyc6fCcsICc6LXwnLCAnPXwnXSwgdW5pY29kZTogJ/CfmJAnIH0sXHJcbiAgICB7IHBhdHRlcm5zOiBbJzoqJywgJzotKicsICc9KiddLCB1bmljb2RlOiAn8J+YmScgfSxcclxuICAgIHsgcGF0dGVybnM6IFsnVF9UJywgJ1QuVCddLCB1bmljb2RlOiAn8J+YrScgfSxcclxuICAgIHsgcGF0dGVybnM6IFsnOk8nLCAnOi1PJywgJz1PJywgJzpvJywgJzotbycsICc9byddLCB1bmljb2RlOiAn8J+YricgfSxcclxuICAgIHsgcGF0dGVybnM6IFsnOlAnLCAnOi1QJywgJz1QJywgJzpwJywgJzotcCcsICc9cCddLCB1bmljb2RlOiAn8J+YiycgfSxcclxuICAgIHsgcGF0dGVybnM6IFsnPi48J10sIHVuaWNvZGU6ICfwn5ijJyB9LFxyXG4gICAgeyBwYXR0ZXJuczogWydALkAnXSwgdW5pY29kZTogJ/CfmLUnIH0sXHJcbiAgICB7IHBhdHRlcm5zOiBbJyouKiddLCB1bmljb2RlOiAn8J+YjScgfSxcclxuICAgIHsgcGF0dGVybnM6IFsnPDMnXSwgdW5pY29kZTogJ+KdpO+4jycgfSxcclxuICAgIHsgcGF0dGVybnM6IFsnXi5eJ10sIHVuaWNvZGU6ICfwn5iKJyB9LFxyXG4gICAgeyBwYXR0ZXJuczogWyc6KzEnXSwgdW5pY29kZTogJ/CfkY0nIH0sXHJcbiAgICB7IHBhdHRlcm5zOiBbJzotMSddLCB1bmljb2RlOiAn8J+RjicgfVxyXG5dO1xyXG5cclxuLypcclxuICogVHJhbnNmb3JtcyBjb21tb24gZW1vamkgdGV4dCB0byBVVEYgZW5jb2RlZCBlbW9qaXNcclxuKi9cclxuQFBpcGUoe25hbWU6ICdlbW9qaWZ5J30pXHJcbmV4cG9ydCBjbGFzcyBFbW9qaWZ5UGlwZSBpbXBsZW1lbnRzIFBpcGVUcmFuc2Zvcm0ge1xyXG4gICAgdHJhbnNmb3JtKG1lc3NhZ2U6IHN0cmluZywgcGlwZUVuYWJsZWQ6IGJvb2xlYW4pOiBzdHJpbmcge1xyXG4gICAgICAgIGlmIChwaXBlRW5hYmxlZCAmJiBtZXNzYWdlICYmIG1lc3NhZ2UubGVuZ3RoID4gMSkgeyAgXHJcbiAgICAgICAgICAgIGVtb2ppRGljdGlvbmFyeS5mb3JFYWNoKGVtb2ppID0+IHtcclxuICAgICAgICAgICAgICAgIGVtb2ppLnBhdHRlcm5zLmZvckVhY2gocGF0dGVybiA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgbWVzc2FnZSA9IG1lc3NhZ2UucmVwbGFjZShwYXR0ZXJuLCBlbW9qaS51bmljb2RlKTtcclxuICAgICAgICAgICAgICAgIH0pXHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICByZXR1cm4gbWVzc2FnZTtcclxuICB9XHJcbn1cclxuIl19

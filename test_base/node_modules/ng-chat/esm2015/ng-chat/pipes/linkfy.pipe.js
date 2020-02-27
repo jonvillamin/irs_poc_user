@@ -1,0 +1,43 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+import { Pipe } from '@angular/core';
+/*
+ * Transforms text containing URLs or E-mails to valid links/mailtos
+*/
+export class LinkfyPipe {
+    /**
+     * @param {?} message
+     * @param {?} pipeEnabled
+     * @return {?}
+     */
+    transform(message, pipeEnabled) {
+        if (pipeEnabled && message && message.length > 1) {
+            /** @type {?} */
+            let replacedText;
+            /** @type {?} */
+            let replacePatternProtocol;
+            /** @type {?} */
+            let replacePatternWWW;
+            /** @type {?} */
+            let replacePatternMailTo;
+            // URLs starting with http://, https://, or ftp://
+            replacePatternProtocol = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+            replacedText = message.replace(replacePatternProtocol, '<a href="$1" target="_blank">$1</a>');
+            // URLs starting with "www." (ignoring // before it).
+            replacePatternWWW = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+            replacedText = replacedText.replace(replacePatternWWW, '$1<a href="http://$2" target="_blank">$2</a>');
+            // Change email addresses to mailto:: links.
+            replacePatternMailTo = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
+            replacedText = replacedText.replace(replacePatternMailTo, '<a href="mailto:$1">$1</a>');
+            return replacedText;
+        }
+        else
+            return message;
+    }
+}
+LinkfyPipe.decorators = [
+    { type: Pipe, args: [{ name: 'linkfy' },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlua2Z5LnBpcGUuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9uZy1jaGF0LyIsInNvdXJjZXMiOlsibmctY2hhdC9waXBlcy9saW5rZnkucGlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLElBQUksRUFBaUIsTUFBTSxlQUFlLENBQUM7Ozs7QUFNcEQsTUFBTSxPQUFPLFVBQVU7Ozs7OztJQUNuQixTQUFTLENBQUMsT0FBZSxFQUFFLFdBQW9CO1FBQzNDLElBQUksV0FBVyxJQUFJLE9BQU8sSUFBSSxPQUFPLENBQUMsTUFBTSxHQUFHLENBQUMsRUFDaEQ7O2dCQUNRLFlBQVk7O2dCQUNaLHNCQUFzQjs7Z0JBQ3RCLGlCQUFpQjs7Z0JBQ2pCLG9CQUFvQjtZQUV4QixrREFBa0Q7WUFDbEQsc0JBQXNCLEdBQUcseUVBQXlFLENBQUM7WUFDbkcsWUFBWSxHQUFHLE9BQU8sQ0FBQyxPQUFPLENBQUMsc0JBQXNCLEVBQUUscUNBQXFDLENBQUMsQ0FBQztZQUU5RixxREFBcUQ7WUFDckQsaUJBQWlCLEdBQUcsZ0NBQWdDLENBQUM7WUFDckQsWUFBWSxHQUFHLFlBQVksQ0FBQyxPQUFPLENBQUMsaUJBQWlCLEVBQUUsOENBQThDLENBQUMsQ0FBQztZQUV2Ryw0Q0FBNEM7WUFDNUMsb0JBQW9CLEdBQUcsMERBQTBELENBQUM7WUFDbEYsWUFBWSxHQUFHLFlBQVksQ0FBQyxPQUFPLENBQUMsb0JBQW9CLEVBQUUsNEJBQTRCLENBQUMsQ0FBQztZQUV4RixPQUFPLFlBQVksQ0FBQztTQUN2Qjs7WUFFRyxPQUFPLE9BQU8sQ0FBQztJQUN2QixDQUFDOzs7WUExQkosSUFBSSxTQUFDLEVBQUMsSUFBSSxFQUFFLFFBQVEsRUFBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFBpcGUsIFBpcGVUcmFuc2Zvcm0gfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuXHJcbi8qXHJcbiAqIFRyYW5zZm9ybXMgdGV4dCBjb250YWluaW5nIFVSTHMgb3IgRS1tYWlscyB0byB2YWxpZCBsaW5rcy9tYWlsdG9zXHJcbiovXHJcbkBQaXBlKHtuYW1lOiAnbGlua2Z5J30pXHJcbmV4cG9ydCBjbGFzcyBMaW5rZnlQaXBlIGltcGxlbWVudHMgUGlwZVRyYW5zZm9ybSB7XHJcbiAgICB0cmFuc2Zvcm0obWVzc2FnZTogc3RyaW5nLCBwaXBlRW5hYmxlZDogYm9vbGVhbik6IHN0cmluZyB7XHJcbiAgICAgICAgaWYgKHBpcGVFbmFibGVkICYmIG1lc3NhZ2UgJiYgbWVzc2FnZS5sZW5ndGggPiAxKVxyXG4gICAgICAgIHtcclxuICAgICAgICAgICAgbGV0IHJlcGxhY2VkVGV4dDtcclxuICAgICAgICAgICAgbGV0IHJlcGxhY2VQYXR0ZXJuUHJvdG9jb2w7XHJcbiAgICAgICAgICAgIGxldCByZXBsYWNlUGF0dGVybldXVztcclxuICAgICAgICAgICAgbGV0IHJlcGxhY2VQYXR0ZXJuTWFpbFRvO1xyXG5cclxuICAgICAgICAgICAgLy8gVVJMcyBzdGFydGluZyB3aXRoIGh0dHA6Ly8sIGh0dHBzOi8vLCBvciBmdHA6Ly9cclxuICAgICAgICAgICAgcmVwbGFjZVBhdHRlcm5Qcm90b2NvbCA9IC8oXFxiKGh0dHBzP3xmdHApOlxcL1xcL1stQS1aMC05KyZAI1xcLyU/PX5ffCE6LC47XSpbLUEtWjAtOSsmQCNcXC8lPX5ffF0pL2dpbTtcclxuICAgICAgICAgICAgcmVwbGFjZWRUZXh0ID0gbWVzc2FnZS5yZXBsYWNlKHJlcGxhY2VQYXR0ZXJuUHJvdG9jb2wsICc8YSBocmVmPVwiJDFcIiB0YXJnZXQ9XCJfYmxhbmtcIj4kMTwvYT4nKTtcclxuXHJcbiAgICAgICAgICAgIC8vIFVSTHMgc3RhcnRpbmcgd2l0aCBcInd3dy5cIiAoaWdub3JpbmcgLy8gYmVmb3JlIGl0KS5cclxuICAgICAgICAgICAgcmVwbGFjZVBhdHRlcm5XV1cgPSAvKF58W15cXC9dKSh3d3dcXC5bXFxTXSsoXFxifCQpKS9naW07XHJcbiAgICAgICAgICAgIHJlcGxhY2VkVGV4dCA9IHJlcGxhY2VkVGV4dC5yZXBsYWNlKHJlcGxhY2VQYXR0ZXJuV1dXLCAnJDE8YSBocmVmPVwiaHR0cDovLyQyXCIgdGFyZ2V0PVwiX2JsYW5rXCI+JDI8L2E+Jyk7XHJcblxyXG4gICAgICAgICAgICAvLyBDaGFuZ2UgZW1haWwgYWRkcmVzc2VzIHRvIG1haWx0bzo6IGxpbmtzLlxyXG4gICAgICAgICAgICByZXBsYWNlUGF0dGVybk1haWxUbyA9IC8oKFthLXpBLVowLTlcXC1cXF9cXC5dKStAW2EtekEtWlxcX10rPyhcXC5bYS16QS1aXXsyLDZ9KSspL2dpbTtcclxuICAgICAgICAgICAgcmVwbGFjZWRUZXh0ID0gcmVwbGFjZWRUZXh0LnJlcGxhY2UocmVwbGFjZVBhdHRlcm5NYWlsVG8sICc8YSBocmVmPVwibWFpbHRvOiQxXCI+JDE8L2E+Jyk7XHJcblxyXG4gICAgICAgICAgICByZXR1cm4gcmVwbGFjZWRUZXh0O1xyXG4gICAgICAgIH1cclxuICAgICAgICBlbHNlXHJcbiAgICAgICAgICAgIHJldHVybiBtZXNzYWdlO1xyXG4gICAgfSBcclxufVxyXG4iXX0=
